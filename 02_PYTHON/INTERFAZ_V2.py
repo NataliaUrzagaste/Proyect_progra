@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from PIL import Image, ImageTk
-import pandas as pd
 
+#Creacion de la pantalla de registro
 
 ventana = ctk.CTk()
 ventana.geometry("1366x768")
