@@ -116,3 +116,63 @@ controlar el llenado o vaciado de recipientes.
 • Detección de interfase de distintos líquidos y materiales: debido a sus 
 propiedades eléctricas es capaz de decir dónde se encuentran dos líquidos 
 diferentes, como agua y aceite.
+D. Identificación de Requerimientos. 
+Para el dispensador de agua, los requerimientos mínimos se definen de la siguiente manera: 
+Variables físicas por medir: 
+Nivel del agua en el depósito (medido con un sensor capacitivo). 
+Detección de la inserción de una moneda (mediante un sensor inductivo). 
+Rango de valores a detectar: 
+Sensor capacitivo: Debe detectar niveles de agua en un rango de 0% cuando el tanque este 
+vacío a 100% que es cuando el tanque está lleno,  
+<<Dispensador de agua automático>>  
+6 
+Sensor inductivo: Debe ser capaz de detectar monedas metálicas utilizadas para que se 
+active el sistema, ignorando otros objetos. 
+Limitaciones del diseño: 
+Sensor capacitivo: El diseño debe ser resistente a la corrosión y a las condiciones de 
+humedad dentro del tanque.  
+Sensor inductivo: El sensor debe estar calibrado para identificar monedas específicas, 
+procurando que otros metales que estén cerca den falsos positivos. 
+Otros requerimientos: 
+Los sensores deben ser ensamblados manualmente, utilizando componentes accesibles y 
+económicos. 
+El diseño debe ser seguro y evitar riesgos eléctricos tanto para el usuario como para el 
+sistema. 
+La interfaz gráfica debe mostrar de forma clara el nivel de agua y registrar cada activación 
+de las bombas al detectar una moneda para asegurar el recto mantenimiento del dispensador. 
+A. Definición de funcionalidades. 
+El diseño del dispensador de agua tendra las siguientes funcionalidades y caracteristicas: 
+Obtención de mediciones: 
+Sensor 
+capacitivo: 
+El sensor capacitivo mide el nivel de agua mediante el cambio de la capacitancia entre dos 
+superficies. Esta variación se convierte en una señal para determinar el nivel de agua en el tanque. 
+La señal será proporcional al nivel de agua y se leerá con un arduino para convertirla en un valor 
+analógico y visualizable en la interfaz gráfica. 
+Sensor 
+inductivo: 
+El sensor inductivo da una señal cuando detecta la presencia de una moneda metálica. Esta señal 
+es de tipo digital, aunque puede ser analógica porque según la moneda devolverá un voltaje y así 
+se reconoce que moneda está entrando, y se utiliza para activar o desactivar el sistema de 
+dispensado de agua al ingresar una moneda. 
+Puntos de calibración: 
+Sensor 
+capacitivo: 
+El sensor capacitivo debe calibrarse para garantizar que los valores de capacitancia correspondan 
+con los niveles de agua específicos. Los puntos de calibración serán: 
+<<Dispensador de agua automático>>  
+7 
+Nivel mínimo (0%): Cuando el depósito está vacío. 
+Nivel máximo (100%): Cuando el depósito está completamente lleno. 
+Estos puntos serán ajustados manualmente utilizando un código del Arduino. 
+Sensor 
+inductivo: 
+El sensor inductivo debe calibrarse para reconocer únicamente un unico tipo de moneda utilizadas 
+en el sistema. El punto de calibración será la distancia a la que el sensor detecta la moneda, y el 
+cómo se basa para distinguirla de otros objetos metálicos. 
+Otros datos relevantes a la funcionalidad: 
+Interfaz gráfica: La interfaz gráfica mostrará en tiempo real el nivel de agua y las 
+activaciones de las bombas al detectar monedas. La visualización del nivel de agua será una 
+representación proporcional del voltaje que dé el sensor capacitivo. 
+Control de bombas: El sistema activará las bombas automáticamente cuando se detecte una 
+moneda, y se apagará cuando se complete el dispensado.
