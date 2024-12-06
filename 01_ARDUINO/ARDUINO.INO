@@ -29,3 +29,15 @@ void setup() {
   
   Serial.begin(9600);
 }
+void loop() {
+  // Lectura de sensores de presencia
+  presenciaA = digitalRead(finalcarA);
+  presenciaB = digitalRead(finalcarB);
+
+  if (presenciaA == LOW || presenciaB == LOW) {
+    digitalWrite(led1, HIGH);
+    delay(2000);
+    digitalWrite(led1, LOW);
+  } else {
+    digitalWrite(led1, LOW);
+  }
