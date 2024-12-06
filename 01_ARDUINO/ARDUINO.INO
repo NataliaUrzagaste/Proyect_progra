@@ -56,4 +56,11 @@ void loop() {
   jsonDoc["datos2"] = presenciaB;
   jsonDoc["datos3"] = lumin1;
   jsonDoc["datos4"] = lumin2;
+
+// Convertir el JSON a string y enviarlo por Serial
+  String output;
+  serializeJson(jsonDoc, output);
+  Serial.println(output);
+
+  delay(500); // Espera para evitar lecturas excesivas
 }
