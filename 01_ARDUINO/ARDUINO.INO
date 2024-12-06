@@ -49,4 +49,11 @@ void loop() {
 
   analogWrite(led2, lumin1);
   analogWrite(led3, lumin2);
+
+  // Creación del objeto JSON
+  StaticJsonDocument<200> jsonDoc;
+  jsonDoc["datos1"] = presenciaA;
+  jsonDoc["datos2"] = presenciaB;
+  jsonDoc["datos3"] = lumin1;
+  jsonDoc["datos4"] = lumin2;
 }
