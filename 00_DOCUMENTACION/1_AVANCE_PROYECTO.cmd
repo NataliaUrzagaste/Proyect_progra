@@ -88,3 +88,31 @@ equilibrio o la precisión de sus mediciones. Estas perturbaciones pueden venir 
 mismo circuito, y pueden o no estar relacionadas con la variable que se desea medir. Un ejemplo 
 de perturbación en el puente puede ser una variación en el voltaje de entrada de la fuente de 
 alimentación, ya que esto generaría errores en la medición.
+4) Variaciones. 
+Las variaciones en el puente Wheatstone son los cambios intencionales o esperados en las 
+resistencias del puente, provocados por la variable que el sistema está diseñado para medir, estas 
+variaciones son las que se capturan y se convierten en señales eléctricas dando al puente una 
+funcionalidad de sensor. 
+B. Sensor de nivel de líquido capacitivo. 
+5) Definición. 
+Un sensor capacitivo mide líquidos y solidos más granulados, este sensor detecta los 
+cambios de la capacitancia, la capacitancia es la encargada de almacenar la carga eléctrica entre 
+dos superficies, este sensor generará un campo eléctrico que va a variar dependiendo del tipo de 
+material y que tan cercano esta ese material, a medida que la proximidad del material o liquido 
+varia también va variando, el sensor traduce la variacion de carga en una señal que nos da el nivel 
+con precisión.  
+6) Señal. 
+Un sensor capacitivo da una señal que depende del cambio de la capacitancia, el cambio de 
+capacitancia de convierta en electricidad, que se procesa para que se pueda monitorear o controlar 
+algún proceso, de acuerdo con el diseño del sensor este pueda dar una señal continua osea analógica 
+como también puede dar una señal digital 
+7) Aplicaciones del sensor de nivel de líquido capacitivo.    
+Los sensores capacitivos se usan para medir niveles de líquidos y sólidos. Algunas de sus 
+aplicaciones más comunes son: 
+• Medición de niveles de agua: Ayudan a monitorear cuánto líquido hay en un 
+tanque, evitando que se derrames o fugas. 
+• Control de procesos industriales: Se usan en sistemas automáticos para 
+controlar el llenado o vaciado de recipientes. 
+• Detección de interfase de distintos líquidos y materiales: debido a sus 
+propiedades eléctricas es capaz de decir dónde se encuentran dos líquidos 
+diferentes, como agua y aceite.
