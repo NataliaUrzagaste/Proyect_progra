@@ -41,3 +41,12 @@ void loop() {
   } else {
     digitalWrite(led1, LOW);
   }
+  // Lectura de potenciómetros y ajuste de luminosidad
+  int medida1 = analogRead(poten1);
+  int medida2 = analogRead(poten2);
+  lumin1 = map(medida1, 8, 1015, 255, 0);
+  lumin2 = map(medida2, 8, 1015, 255, 0);
+
+  analogWrite(led2, lumin1);
+  analogWrite(led3, lumin2);
+}
