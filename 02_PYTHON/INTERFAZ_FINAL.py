@@ -205,6 +205,28 @@ boton_menu = ctk.CTkButton(pagina_datos, text="Volver al Inicio", width=200, hei
 boton_menu.place(relx=0.1, rely=0.9, anchor='center')
 pantalla_inicio()
 
+# Ejecuta la función para leer datos serial en un hilo aparte después de cargar la interfaz
+def iniciar_lectura_serial():
+    global lectura_hilo
+    inicializar_puerto_serial()
+    lectura_hilo = threading.Thread(target=leer_datos_serial, daemon=True)
+    lectura_hilo.start()
+
+ventana.after(1000, iniciar_lectura_serial)
+def guardar_datos_csv():
+    """Recoge los datos de los campos y guarda en un archivo CSV."""
+    data = {
+        "Presencia A": datos1.get(),
+        "Presencia B": datos2.get(),
+        "Luminosidad 1": datos3.get(),
+        "Luminosidad 2": datos4.get(),
+    }
+    df = pd.DataFrame([data])
+    file_path = ctk.filedialog.asksaveasfilename(
+        defaultextension=".csv",
+        filetypes=[("Archivos CSV", "*.csv"), ("Todos los archivos", "*.*")],
+        title="Guardar datos como"
+    )
     if file_path:
         df.to_csv(file_path, index=False)
         print(f"Datos guardados en {file_path}")
