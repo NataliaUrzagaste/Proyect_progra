@@ -233,20 +233,22 @@ ventana.after(1000, iniciar_lectura_serial)
 def guardar_datos_csv():
     """Recoge los datos de los campos y guarda en un archivo CSV."""
     data = {
-        "Presencia A": datos1.get(),
-        "Presencia B": datos2.get(),
-        "Luminosidad 1": datos3.get(),
-        "Luminosidad 2": datos4.get(),
+        "Estado del detector de monedas": datos1.get(),
+        "Estado del Reed Switch": datos2.get(),
+        "Estado de la bomba": datos3.get(),
+        "Encendido de la bomba": datos4.get(),
+        "": datos5.get(),  # Contador de monedas
     }
+    
+    # Convierte los datos en un DataFrame de pandas
     df = pd.DataFrame([data])
+    
+    # Solicita al usuario la ubicación y el nombre del archivo para guardar
     file_path = ctk.filedialog.asksaveasfilename(
         defaultextension=".csv",
         filetypes=[("Archivos CSV", "*.csv"), ("Todos los archivos", "*.*")],
         title="Guardar datos como"
     )
-    if file_path:
-        df.to_csv(file_path, index=False)
-        print(f"Datos guardados en {file_path}")
 def resource_path(relative_path):
     
     try:
