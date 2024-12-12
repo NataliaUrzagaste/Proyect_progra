@@ -34,21 +34,35 @@ def leer_datos_serial():
                 print("Error en la lectura del puerto serial:", e)
         else:
             time.sleep(2)  
+            
+moneda_contador = 0
 
 def actualizar_entradas(data):
     """Actualiza las entradas de la interfaz con los datos recibidos del Arduino."""
-    if 'datos1' in data:
+    #Variabale global
+    global moneda_contador
+
+    if 'relayBomba' in data and data['relayBomba'] == 1:  # Bomba activada
+        if 'contadorMonedas' in data:
+            moneda_contador = data['contadorMonedas']  # Actualizar el contador 
+            datos5.delete(0, ctk.END)
+            datos5.insert(0, f"Monedas detectadas: {moneda_contador}")
+
+    if 'sensorMoneda' in data:
         datos1.delete(0, ctk.END)
-        datos1.insert(0, str(data['datos1']))
-    if 'datos2' in data:
+        datos1.insert(0, str(data['sensorMoneda']))
+    
+    if 'finalCarrera' in data:
         datos2.delete(0, ctk.END)
-        datos2.insert(0, str(data['datos2']))
-    if 'datos3' in data:
+        datos2.insert(0, str(data['finalCarrera']))
+    
+    if 'relayBomba' in data:
         datos3.delete(0, ctk.END)
-        datos3.insert(0, str(data['datos3']))
-    if 'datos4' in data:
+        datos3.insert(0, "ON" if data['relayBomba'] else "OFF")
+    
+    if 'estado' in data:
         datos4.delete(0, ctk.END)
-        datos4.insert(0, str(data['datos4']))        
+        datos4.insert(0, str(data['estado']))  
 
 def procesar_registro():
     usuario = registro_usuario.get()
