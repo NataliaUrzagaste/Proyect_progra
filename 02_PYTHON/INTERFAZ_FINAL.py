@@ -34,7 +34,7 @@ def leer_datos_serial():
                 print("Error en la lectura del puerto serial:", e)
         else:
             time.sleep(2)  
-            
+
 moneda_contador = 0
 
 def actualizar_entradas(data):
@@ -211,6 +211,9 @@ datos3.place(relx=0.2, rely=0.6, anchor='center')
 
 datos4 = ctk.CTkEntry(pagina_datos, placeholder_text="Luminosidad 2", width=250, height=50, corner_radius=15, font=('Squada One', 20), fg_color="white", bg_color="#32ade6", text_color="black", justify='center')
 datos4.place(relx=0.4, rely=0.6, anchor='center')
+#Creacion de un nuevo cuadro de texto para el contador de monedas
+datos5 = ctk.CTkEntry(pagina_datos, placeholder_text="Contador de Monedas", width=300, height=50, corner_radius=15, font=('Squada One', 20), fg_color="white", bg_color="#32ade6", text_color="black", justify='center')
+datos5.place(relx=0.6, rely=0.5, anchor='center')
 
 boton_guardar = ctk.CTkButton(pagina_datos, text="GUARDAR", width=200, height=40, corner_radius=10, font=('Squada One', 30), command=lambda: [guardar_datos_csv()], fg_color="#32ADE6", bg_color="#32ade6")
 boton_guardar.place(relx=0.9, rely=0.9, anchor='center')
